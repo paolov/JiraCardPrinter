@@ -1,0 +1,113 @@
+﻿.card {
+    margin: 0px;
+    padding: 5px;
+    height: 225px;
+    width: 325px;
+    border-color: gray;
+    border-width: 1px;
+    border-style: solid;
+    display: inline-block;
+    page-break-before: avoid;
+    font-size: 16px;
+}
+
+.card-header {
+    display: block;
+    height: 35px;
+}
+
+.card-body {
+    display: block;
+    height: 145px;
+    overflow: hidden;
+}
+
+.card-footer {
+    display: block;
+    height: 35px;
+    padding-top: 5px;
+}
+
+.card-type {
+    float: left;
+    height: 24px;
+    width: 24px;
+}
+
+.card-key {
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    width: 260px;
+    vertical-align: middle;
+    font-weight: bolder;
+    padding-left: 5px;
+}
+
+.card-parent-key {
+    display: inline;
+    font-size: smaller;
+}
+
+.card-user {
+    float: right;
+    height: 24px;
+    width: 24px;
+}
+
+.card-parent-summary {
+    font-size: smaller;
+    font-style: italic;
+    margin-bottom: 10px;
+    overflow: hidden;
+    max-height: 50px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.card-summary-short {
+    font-weight: bolder;
+    overflow: hidden;
+    max-height: 80px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.card-summary {
+    font-weight: bolder;
+    overflow: hidden;
+    max-height: 130px;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+}
+
+.card-epic {
+    font-size: smaller;
+    float: left;
+    background-color: gray;
+    color: white;
+    padding: 3px;
+    border-radius: 5px;
+    max-width: 240px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.card-estimate {
+    font-size: smaller;
+    float: right;
+    border-radius: 5px;
+    background-color: lightgray;
+    color: black;
+    padding: 3px;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+}

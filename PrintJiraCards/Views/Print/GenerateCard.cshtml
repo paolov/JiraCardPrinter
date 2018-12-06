@@ -13,54 +13,11 @@
     <meta name="viewport" content="width=device-width" />
     <title>Print cards</title>
     <link rel="stylesheet" type="text/css" href="~/Content/site.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/card.css" />
 </head>
 <body>
     <div id="container">
-        @{ foreach (var card in Model)
-            {
-                <div class="card">
-                    <div class="card-header">
-                        <img class="card-type" src="@card.TypeAvatar.Url" />
-
-                        <div class="card-key">
-                            @if (card.HasParent)
-                            {
-                                <div class="card-parent-key">
-                                    @card.ParentKey  \
-                                </div>
-                            }
-                            @card.Key
-                        </div>
-                        <img class="card-user" src="@card.UserAvatar.Url" />
-                    </div>
-                    <div class="card-body">
-
-                        @if (card.HasParent)
-                        {
-                            <div class="card-summary-short">
-                                <div class="card-parent-summary">
-                                    @card.ParentSummary
-                                </div>
-                                @card.Summary
-                            </div>
-                        }
-                        else
-                        {
-                            <div class="card-summary">
-                                @card.Summary
-                            </div>
-                        }
-                    </div>
-                    <div class="card-footer">
-                        @if (card.HasEpic)
-                        {
-                            <div class="card-epic">@card.EpicSummary</div>
-                        }
-
-                        <div class="card-estimate">@card.EstimateTotal</div>
-                    </div>
-                </div>
-            }}
+        @{ foreach (var card in Model) { Html.RenderPartial("~/Views/Print/_CardTemplate.cshtml", card); }}
     </div>
 </body>
 </html>

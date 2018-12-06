@@ -1,0 +1,33 @@
+﻿@model PrintJiraCards.Models.Card
+<div class="card">
+    <div class="card-header">
+        <img class="card-type" src="@Model.TypeAvatar.Url" />
+        <div class="card-key">
+            @if (Model.HasParent)
+            {
+                <div class="card-parent-key">@Model.ParentKey  \</div>
+            }
+            @Model.Key
+        </div>
+        <img class="card-user" src="@Model.UserAvatar.Url" />
+    </div>
+    <div class="card-body">
+        @if (Model.HasParent)
+        {
+            <div class="card-summary-short">
+                <div class="card-parent-summary">@Model.ParentSummary</div>@Model.Summary
+            </div>
+        }
+        else
+        {
+            <div class="card-summary">@Model.Summary</div>
+        }
+    </div>
+    <div class="card-footer">
+        @if (Model.HasEpic)
+        {
+            <div class="card-epic">@Model.EpicSummary</div>
+        }
+        <div class="card-estimate">@Model.EstimateTotal</div>
+    </div>
+</div>

@@ -94,6 +94,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\card.css" />
     <Content Include="Content\site.css" />
     <Content Include="Global.asax" />
     <Content Include="secrets.xml">
@@ -162,6 +163,7 @@
     <None Include="packages.config" />
     <Content Include="Views\Print\GenerateCard.cshtml" />
     <Content Include="Views\Print\Index.cshtml" />
+    <Content Include="Views\Print\_CardTemplate.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
