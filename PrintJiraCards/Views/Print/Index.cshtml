@@ -1,0 +1,31 @@
+﻿@model PrintJiraCards.Models.PrevJql
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Print cards</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/site.css" />
+</head>
+<body>
+   
+    <form action="/print/GenerateCard" method="post">
+        <div>
+            <div>
+                JQL
+            </div>
+            <div>
+                <input type="text" name="jql" value="@Model.Jql" />
+            </div>
+            <div>
+                <input type="submit" value="search" />
+            </div>
+        </div>
+    </form>
+
+</body>
+</html>
