@@ -1,2 +1,2 @@
 # JiraCardPrinter
-Print cards associated to a JQL query
+Print JIRA cards associated to a JQL query
