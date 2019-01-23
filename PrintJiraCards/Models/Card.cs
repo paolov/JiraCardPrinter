@@ -1,4 +1,6 @@
-﻿namespace PrintJiraCards.Models
+﻿using System.Collections.Generic;
+
+namespace PrintJiraCards.Models
 {
     public class Card
     {
@@ -22,5 +24,7 @@
         public string FullKey => HasParent ? $"{ParentKey}\\{Key}" : Key;
         public string EstimateTotal => string.IsNullOrEmpty(Remaining) || Remaining == "0m" ? Estimated : Remaining;
         public string Epic => string.IsNullOrEmpty(EpicSummary) ? EpicKey : EpicSummary;
+
+        public List<string> Labels { get; internal set; }
     }
 }

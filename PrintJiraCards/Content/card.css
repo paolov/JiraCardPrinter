@@ -1,8 +1,8 @@
 ﻿.card {
     margin: 0px;
     padding: 5px;
-    height: 225px;
-    width: 325px;
+    height: 240px;
+    width: 330px;
     border-color: gray;
     border-width: 1px;
     border-style: solid;
@@ -13,12 +13,12 @@
 
 .card-header {
     display: block;
-    height: 35px;
+    height: 45px;
 }
 
 .card-body {
     display: block;
-    height: 145px;
+    height: 155px;
     overflow: hidden;
 }
 
@@ -30,15 +30,15 @@
 
 .card-type {
     float: left;
-    height: 24px;
-    width: 24px;
+    height: 32px;
+    width: 32px;
 }
 
 .card-key {
     display: inline-block;
-    height: 24px;
-    line-height: 24px;
-    width: 260px;
+    height: 30px;
+    line-height: 30px;
+    width: 240px;
     vertical-align: middle;
     font-weight: bolder;
     padding-left: 5px;
@@ -51,8 +51,8 @@
 
 .card-user {
     float: right;
-    height: 24px;
-    width: 24px;
+    height: 32px;
+    width: 32px;
 }
 
 .card-parent-summary {
@@ -69,7 +69,6 @@
 .card-summary-short {
     font-weight: bolder;
     overflow: hidden;
-    max-height: 80px;
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
@@ -78,7 +77,7 @@
 .card-summary {
     font-weight: bolder;
     overflow: hidden;
-    max-height: 130px;
+    max-height: 110px;
     display: -webkit-box;
     -webkit-line-clamp: 7;
     -webkit-box-orient: vertical;
@@ -109,5 +108,18 @@
     padding: 3px;
     border-color: black;
     border-width: 1px;
+    border-style: solid;
+}
+
+.label {
+    float: left;
+  
+    font-size: smaller;
+    border-radius: 5px;
+    background-color: lightgray;
+    color: black;
+    padding: 1px;
+    border-color: black;
+    border-width: 0px;
     border-style: solid;
 }

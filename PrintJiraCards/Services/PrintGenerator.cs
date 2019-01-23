@@ -195,13 +195,14 @@ namespace PrintJiraCards.Services
                     ParentKey = task.ParentKey,
                     Assignee = task.AssigneeName,
                     TypeAvatar = avatarsMap[task.IssueTypeObj.IconUrl],
-                    UserAvatar = avatarsMap[task.Assignee.AvatarUrls.Huge],
+                    UserAvatar = string.IsNullOrEmpty(task.Assignee?.AvatarUrls?.Huge) ? Avatar.Empty : avatarsMap[task.Assignee.AvatarUrls.Huge],
                     Estimated = task.TimeTracking.OriginalEstimate,
                     Remaining = task.TimeTracking.RemainingEstimate,
                     Summary = task.Summary, //task.SummarySnippet
                     HasSubTasks = task.SubTasks?.Count == 0,
                     EpicKey = task.EpicKey ?? string.Empty,
-                    IssueType = task.IssueType
+                    IssueType = task.IssueType,
+                    Labels = task.Labels
                 };
 
                 cards.Add(card);
@@ -247,7 +248,8 @@ namespace PrintJiraCards.Services
                                   })
                                   .ToDictionary(x => x.Url);
 
-            var usersIcons = tasks.Select(x => x.Assignee.AvatarUrls.Huge)
+            var usersIcons = tasks.Where(x => !string.IsNullOrEmpty(x.Assignee?.AvatarUrls?.Huge))
+                                  .Select(x => x.Assignee.AvatarUrls.Huge)
                                   .Distinct()
                                   .Select(x => new Avatar
                                   {

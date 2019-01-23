@@ -9,7 +9,9 @@
             }
             @Model.Key
         </div>
-        <img class="card-user" src="@Model.UserAvatar.Url" />
+        @{ if (!string.IsNullOrEmpty(Model.UserAvatar.Url)) {
+                <img class="card-user" src="@Model.UserAvatar.Url" />
+                } }
     </div>
     <div class="card-body">
         @if (Model.HasParent)
@@ -21,6 +23,10 @@
         else
         {
             <div class="card-summary">@Model.Summary</div>
+        }
+        @foreach (var label in Model.Labels)
+        {
+            <div class="label">@label</div>
         }
     </div>
     <div class="card-footer">
